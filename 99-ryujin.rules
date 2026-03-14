@@ -1,0 +1,14 @@
+# Ryujin III AIO — allow non-root USB access
+# Kernel HID driver MUST stay bound for hidapi reads to work.
+# Install: sudo cp 99-ryujin.rules /etc/udev/rules.d/ && sudo udevadm control --reload-rules
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1ada", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1aa2", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1ade", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1bcb", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0b05", ATTR{idProduct}=="1b4f", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="a386", MODE="0666"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1ada", MODE="0666"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1aa2", MODE="0666"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1ade", MODE="0666"
+KERNEL=="hidraw*", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1bcb", MODE="0666"

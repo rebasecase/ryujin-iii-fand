@@ -1,0 +1,13 @@
+[Unit]
+Description=Ryujin III AIO Fan Curve Daemon
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ryujin-iii-fand --display cyberpunk
+Restart=on-failure
+RestartSec=5
+DynamicUser=yes
+
+[Install]
+WantedBy=multi-user.target
