@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/ryujin-iii-fand --display cyberpunk
+ExecStart=/usr/local/bin/ryujin-iii-fand --config /etc/ryujin-iii-fand.conf
 Restart=on-failure
 RestartSec=5
 DynamicUser=yes
